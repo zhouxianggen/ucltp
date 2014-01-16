@@ -1,2 +1,2 @@
-SUBDIRS = util/ sre/
-SUBDIRS += sre/test
+SUBDIRS = util/ sre/ dat/ ner/
+SUBDIRS += sre/test dat/test

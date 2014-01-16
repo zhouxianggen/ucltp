@@ -21,14 +21,11 @@ protected:
 	}
 };
 
-TEST_F (TestSre, test_build)
+TEST_F (TestSre, test_all)
 {
-  ASSERT_TRUE(fo);
   int r = _re->build("regexp");
-}
+  ASSERT_EQ(r, 0);
 
-TEST_F (TestSre, test_match)
-{
   char str[] = "一千三百零二万亿零四百八十万三千二百零一";
   
   match_result_t mr = _re.match(str);

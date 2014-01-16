@@ -34,8 +34,9 @@ AC_OUTPUT([Makefile
            util/Makefile
            sre/Makefile
            sre/test/Makefile])
-#           dat/Makefile
-#           dat/test/Makefile
-#           ner/Makefile
-#           ner/test/Makefile])
+           dat/Makefile
+           dat/test/Makefile
+           ner/Makefile
+           ner/number/Makefile
+           ner/number/test/Makefile])
 
