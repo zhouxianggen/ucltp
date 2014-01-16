@@ -335,6 +335,8 @@ int Sre::build(const char* fre)
   _objects.clear();
 
   read_lines(fre, lines);
+  if (lines.size() == 0) return -1;
+
   for (int i=0; i<lines.size(); i+=1) {
     split(lines[i], parts);
     if (parts.size() == 2) {
@@ -344,6 +346,8 @@ int Sre::build(const char* fre)
       _objects.back().first->compile(parts[0].c_str());
     }
   }
+
+  return 0;  
 }
 
 match_result_t Sre::match(const vector<char_t>& chars, int start)

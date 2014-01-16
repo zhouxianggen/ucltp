@@ -96,7 +96,7 @@ int Dat::build(const char* fdict)
     }
   }
 
-  if (entries.size() <= 0) return 0;
+  if (entries.size() <= 0) return -1;
   sort(entries.begin(), entries.end());
   return build(entries);
 }
