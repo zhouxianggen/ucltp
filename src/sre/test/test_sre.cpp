@@ -27,20 +27,17 @@ TEST_F (TestSre, test_all)
   ASSERT_EQ(r, 0);
 
   char str[] = "一千三百零二万亿零四百八十万三千二百零一";
-  
-  match_result_t mr = _re.match(str);
-  ASSERT_EQ(mr.len, strlen(str));
-  ASSERT_EQ(mr.value, 0);
-
-  vector<char_t> chars;
+  vector<ucltp::char_t> chars;
   ucltp::read_utf8_text(str, chars);
-  mr = _re.match(chars, 0);
+  
+  ucltp::match_result_t mr = _re->match(chars, 0);
+  printf("chars.size = %d\n", chars.size());
   ASSERT_EQ(mr.len, chars.size());
   
-  mr = _re.match(chars, 1);
-  ASSERT_EQ(mr.len, 0);
+  mr = _re->match(chars, 1);
+  ASSERT_EQ(mr.len, 2);
   
-  mr = _re.match(chars, 2);
+  mr = _re->match(chars, 2);
   ASSERT_EQ(mr.len, chars.size()-2);
 }
 
