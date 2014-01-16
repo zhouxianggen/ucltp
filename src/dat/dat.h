@@ -8,7 +8,7 @@
 
 #include <vector>
 using std::vector;
-#include "def.h"
+#include "type.h"
 
 namespace ucltp {
 

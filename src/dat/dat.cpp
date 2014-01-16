@@ -8,7 +8,7 @@ using std::sort;
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/mman.h>
-#include "utils.h"
+#include "util.h"
 #include "dat.h"
 
 namespace ucltp {
@@ -65,7 +65,7 @@ match_result_t Dat::match(const vector<char_t>& chars, int start)
   for (; i < len; ++i) { 
     for (int j = 0; chars[i]._name[j]; ++j) {
       if (j == 0 && _array[b].check == b && _array[b].base < 0) {
-        r.len = i;
+        r.len = i-start;
         r.value = -_array[b].base;
       }
       p = b +(size_t)((uchar)(chars[i]._name[j])) + 1;
@@ -76,7 +76,7 @@ match_result_t Dat::match(const vector<char_t>& chars, int start)
     }
   }
   if (_array[b].check == b && _array[b].base < 0) {
-    r.len = i;
+    r.len = i - start;
     r.value = -_array[b].base;
   }
 

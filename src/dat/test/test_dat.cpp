@@ -28,15 +28,15 @@ TEST_F (TestDat, test_all)
   
   char str[] = "中国人的中国梦之队";
 
-  vector<char_t> chars;
+  vector<ucltp::char_t> chars;
   ucltp::read_utf8_text(str, chars);
-  match_result_t mr = _dict.match(chars, 0);
+  ucltp::match_result_t mr = _dict->match(chars, 0);
   ASSERT_EQ(mr.len, 3);
   
-  mr = _dict.match(chars, 1);
+  mr = _dict->match(chars, 1);
   ASSERT_EQ(mr.len, 0);
   
-  mr = _dict.match(chars, 4);
+  mr = _dict->match(chars, 4);
   ASSERT_EQ(mr.len, 5);
 
   r = _dict->save("bin");
@@ -44,7 +44,7 @@ TEST_F (TestDat, test_all)
   r = _dict->load("bin");
   ASSERT_EQ(r, 0);
 
-  mr = _dict.match(chars, 4);
+  mr = _dict->match(chars, 4);
   ASSERT_EQ(mr.len, 5);
 }
 
