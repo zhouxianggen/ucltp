@@ -1,0 +1,5 @@
+
+autoreconf -f -i
+automake -a
+./configure
+make
