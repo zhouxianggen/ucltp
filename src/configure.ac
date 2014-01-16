@@ -33,7 +33,7 @@ AC_CHECK_FUNCS([memset munmap sqrt strdup])
 AC_OUTPUT([Makefile
            util/Makefile
            sre/Makefile
-           sre/test/Makefile])
+           sre/test/Makefile
            dat/Makefile
            dat/test/Makefile
            ner/Makefile

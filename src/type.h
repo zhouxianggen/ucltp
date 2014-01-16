@@ -1,7 +1,7 @@
 // common difinition
 
-#ifndef UCLTP_COMMON_H_
-#define UCLTP_COMMON_H_
+#ifndef UCLTP_TYPE_H_
+#define UCLTP_TYPE_H_
 
 #include <string>
 using std::string;

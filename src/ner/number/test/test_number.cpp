@@ -6,10 +6,10 @@
 
 #include <gtest/gtest.h>
 #include <fstream>
-#include "type.h"
 #include "util.h"
 #include "../number.h"
 using ucltp::Number;
+using ucltp::uint64;
 
 class TestNumber : public testing::Test {
 protected:
@@ -31,12 +31,13 @@ TEST_F (TestNumber, test_all)
   
   char str[] = "少量人有6.899万亿(六千八百万亿零三百零一万零五十四)";
 
-  vector<char_t> chars;
+  vector<ucltp::char_t> chars;
   ucltp::read_utf8_text(str, chars);
   int s = chars.size();
-  _number.seg(chars);
+  _number->seg(chars);
 
-  uint64 B = POS_m, I = POS_m << 1;
+  uint64 B = POS_m;
+  uint64 I = POS_m << 1;
   ASSERT_EQ(chars[0]._tag, B);
   ASSERT_EQ(chars[1]._tag, I);
   ASSERT_EQ(chars[2]._tag, 0);

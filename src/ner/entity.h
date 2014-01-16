@@ -3,7 +3,7 @@
 #ifndef UCLTP_ENTITY_H_
 #define UCLTP_ENTITY_H_
 
-#include "def.h"
+#include "type.h"
 
 namespace ucltp {
 
