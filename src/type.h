@@ -25,6 +25,7 @@ typedef  unsigned long long  uint64;
 #define  min2(x, y)  ((x)<(y)? (x) : (y))
 
 // part-of-speech define
+#define  POS_none  ((uint64)0)
 #define  POS_a  ((uint64)(0x01) << 0)
 #define  POS_b  ((uint64)(0x01) << 2)
 #define  POS_c  ((uint64)(0x01) << 4)
@@ -53,6 +54,7 @@ typedef  unsigned long long  uint64;
 #define  POS_wp  ((uint64)(0x01) << 50)
 #define  POS_ws  ((uint64)(0x01) << 52)
 #define  POS_x  ((uint64)(0x01) << 54)
+#define  POS_unknown  ((uint64)(0x01) << 62)
 // binary=0101010101010101010101010101010101010101010101010101010101010101
 #define  POS_MASK  0x5555555555555555
 
